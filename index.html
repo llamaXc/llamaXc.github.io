@@ -249,7 +249,7 @@
                 siema = mySiema;
             }
 
-            function readMore(index){
+            function readMore(index, shouldClose){
                 console.log("read more: " + index);
 
                 const pTagMore = $("#whole-" + index)
@@ -258,7 +258,7 @@
                 const buttonReadmore = $("#read-more-" + index);
                 console.log(isPTagMoreShown)
 
-                if(isPTagMoreShown){
+                if(isPTagMoreShown || shouldClose){
                     pTagMore.css("display", "none")
                     pTagPreview.css("display", "block")
                     buttonReadmore.html("Show more")
@@ -291,12 +291,15 @@
             }
 
             async function backSiema(){
-
                 await siema.prev(1);
             }
 
             async function nextSiema(){
                 await siema.next(1);
+                // close all
+                for(let i = 0; i < numReviews; i++){
+                    readMore(i, true)
+                }
             }
 
             function setupColorTheme(){
