@@ -115,7 +115,6 @@ hr{
     font-size: 3em;
     display: flex;
     flex-direction: column;
-
     align-items: center;
     text-align: center;
     align-self: center;
@@ -247,7 +246,6 @@ blockquote {
     z-index: 1;
     height: fit-content;
     /* border: 3px solid black; */
-    border-radius: 10px;;
 }
 
 .card-text {
@@ -267,8 +265,9 @@ blockquote {
 }
 
 .review-container{
-    background-color: rgb(198, 198, 198) !important;
+    background-color: lightgray !important;
     border: 3px solid black !important;
+    border-radius: 10px !important;;
     display: flex ;
     max-width: 500px;
     /* flex-direction: row !important; */
@@ -353,6 +352,59 @@ blockquote {
     border-left: 1px solid black;
 }
 
+.current-wrapper{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    padding-top: 20px;
+    max-width: 500px;
+    border: 3px solid black;
+    background-image: none;
+    border-radius: 10px;;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+
+#more-current{
+    display: none;
+}
+
+.show-more-button{
+    width: 100%;
+    border: 2px solid black;
+    background-color: lightgray;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    height: 3rem;
+}
+
+.show-more-button:hover{
+    background-color: #e1989e;
+}
+
+#preview-current{
+    display: block;
+}
+.current-text-tag{
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    max-width: 500px;
+
+}
+
+#current-image{
+    width: 30vw;
+    max-width: 500px;
+}
+
 
 .align-left{
     text-align: left;
@@ -418,5 +470,9 @@ blockquote {
     .review-container{
         display: flex !important;
         flex-direction: column !important;
+    }
+
+    .current-wrapper{
+        margin: 10px;
     }
 }

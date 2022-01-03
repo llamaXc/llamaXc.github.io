@@ -33,6 +33,7 @@
             <div id="navbar-elements" onClick="handleClickInMenu()">
                 <a href="#main">Home</a>
                 <a href="#statement">Statement</a>
+                <a href="#current">Winter Group</a>
                 <a href="#stories">Successes</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -54,8 +55,6 @@
                     <button onclick="visitFacebook()" type="button"class="social-button btn btn-light">Facebook</button>
                     <button onclick="visitInstagram()" type="button"class="social-button btn btn-light">Instagram</button>
                     <button onclick="visitTestimonials()" type="button"class="social-button btn btn-light">Success Stories</button>
-                    <button onclick="scrollToContact()" type="button"class="social-button btn btn-light">Contact Me</button>
-
                 </div>
             </div>
 
@@ -76,6 +75,17 @@
                         <p class="mb-0">Take rest in knowing you are fearfully and wonderfully made.</p>
                         <br/><span class="author-tag">Psalms 139:14</span>
                     </blockquote>
+                </div>
+            </div>
+
+            <a class="anchor" id="current"></a>
+            <div class="section-wrapper" id="current-update">
+                <p id="about-me-title">Winter Accountability Group</p>
+                <div class="current-wrapper">
+                    <img id="current-image" src="assets/ogimage.png"/>
+                    <p class="current-text-tag" id="preview-current">Preview...</p>
+                    <p class="current-text-tag" id="more-current">All</p>
+                    <button onclick="toggleCurrentText()" class="show-more-button" id="current-read-more-button">Show more</button>
                 </div>
             </div>
 
@@ -100,8 +110,8 @@
             <div class="section-wrapper" id="contact-container">
                 <div class="contact-wrapper">
                 <p id="about-me-title">Contact</p>
-                <p>Feel free to reach out via my social media accounts or through my email<br/> <a href="">vandritsch@aol.com</a></p>
-                <p class="align-left">Mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </p>
+                <p>I would love the opportunity to connect and discuss what Plexus looks like, and if it may be a good fit for you as well!</p>
+                <a href="mailto:vandritsch@aol.com">vandritsch@aol.com</a>
                 </div>
             </div>
 
@@ -124,6 +134,8 @@
             const successSection = $("#success")
             const siemaContainer = $(".siema")
             const reviewContainer = $(".review-container")
+            const currentContainer = $("#current-update")
+            const currentImage = $("#current-image")
             const MOBILE_WIDTH = 600
 
             let navBarIsOpenMobile = false;
@@ -132,11 +144,44 @@
             buildReviews();
             setupColorTheme();
             initNavbar();
+            setCurrentText();
 
             let numReviews = 0;
 
             let siema;
 
+            async function setCurrentText(){
+                const previewEl = $("#preview-current")
+                const wholeEl = $("#more-current")
+                const data = await $.getJSON("data/current.json");
+                const {title, text, image} = data;
+                console.log(text)
+                console.log(image)
+                const preview = text.substring(0,300) + "..."
+                const whole = text
+                currentImage.attr("src", image);
+                previewEl.html(preview)
+                wholeEl.html(whole);
+            }
+
+            function toggleCurrentText(){
+
+                const pTagMore = $("#more-current")
+                const pTagPreview = $("#preview-current")
+                const isPTagMoreShown = pTagMore.css('display') == 'block'
+                const buttonReadmore = $("#current-read-more-button");
+                console.log(isPTagMoreShown)
+
+                if(isPTagMoreShown){
+                    pTagMore.css("display", "none")
+                    pTagPreview.css("display", "block")
+                    buttonReadmore.html("Show more")
+                }else{
+                    pTagMore.css("display", "block")
+                    pTagPreview.css("display", "none")
+                    buttonReadmore.html("Show less")
+                }
+            }
             function initNavbar(){
                 if($(window).width() <= MOBILE_WIDTH){
                     closeNavBar();
@@ -200,12 +245,14 @@
                     const assetImage = 'assets/reviews/' + image
                     htmlReviewBlock += '<div class="review-item">'
                     htmlReviewBlock += '  <div class="card review-container">'
-                    htmlReviewBlock += '      <img class="card-img-top w-50" src="'+ assetImage + '">'
+                    if(image){
+                        htmlReviewBlock += '      <img class="card-img-top w-50" src="'+ assetImage + '">'
+                    }
                     htmlReviewBlock += '      <div class="card-body">'
                     htmlReviewBlock += '        <h5 class="card-title">' + title + '</h5>'
                     htmlReviewBlock += '        <p id="' + ("preview-" + index) + '"class="card-text review-text-preview">' + textPreview + '</p>'
                     htmlReviewBlock += '        <p id="' + ("whole-" + index) + '"class="card-text review-text-whole">' + text + '</p>'
-                    htmlReviewBlock += '        <button id="' + ("read-more-" + index) + '" onclick="readMore(' + index + ')">Show more</button>'
+                    htmlReviewBlock += '        <button class="show-more-button" id="' + ("read-more-" + index) + '" onclick="readMore(' + index + ')">Show more</button>'
                     htmlReviewBlock += '        <p class="card-text"><small> Story ' + index + '</small></p>'
                     htmlReviewBlock += '     </div>'
                     htmlReviewBlock += '   </div>'
@@ -321,13 +368,17 @@
                 setTextureOfElement(successSection, MAIN_TEXTURE)
                 setTextureOfElement(reviewContainer, MAIN_TEXTURE)
                 setTextureOfElement(contactSection, MAIN_TEXTURE)
+                setTextureOfElement(currentContainer, MAIN_TEXTURE);
+
                 setColorOfElement(body, BG_COLOR)
                 setColorOfElement(reviewContainer, LIGHT_GRAY)
                 setColorOfElement(mainSection, LIGHT_GRAY)
                 setColorOfElement(aboutSection, PINK_LIGHT)
-                setColorOfElement(successSection, LIGHT_GRAY)
-                setColorOfElement(contactSection, PINK_LIGHT)
-                setColorOfElement(footer, LIGHT_GRAY)
+                setColorOfElement(currentContainer, LIGHT_GRAY)
+
+                setColorOfElement(successSection, PINK_LIGHT)
+                setColorOfElement(contactSection, LIGHT_GRAY)
+                setColorOfElement(footer, PINK_LIGHT)
                 setTextureOfElement(buttons, MAIN_TEXTURE)
             }
 
