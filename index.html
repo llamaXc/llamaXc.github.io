@@ -292,6 +292,9 @@
 
             async function backSiema(){
                 await siema.prev(1);
+                for(let i = 0; i < numReviews; i++){
+                    readMore(i, true)
+                }
             }
 
             async function nextSiema(){

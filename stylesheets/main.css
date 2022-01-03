@@ -11,22 +11,14 @@ html, body {
     height: 100%;
     margin: 0px;
     padding: 0px;
+    scroll-behavior: smooth;
 }
 
 .main-container {
     font-family: Pacifico; 
-    /* height: 100%; */
     border: 3px solid black;
-    /* margin: 20px; */
     overflow:auto;
     padding-top: 40px;
-
-    /* width: 50%;
-    display: flex;
-    margin: auto;
-    justify-items: center;
-    justify-self: center;
-    justify-content: center; */
 }
 
 #title-container{
@@ -108,18 +100,12 @@ hr{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    
     margin-left: auto;
     margin-right: auto;
 
     align-items: center;
-    /* text-align : center; */
     padding-top: 20px;
-
-    /* margin: 0px 20px 0px 20px; */
     max-width: 500px;
-    /* background-color: #b6e6ff; */
-    /* border: 1px solid black; */
 }
 
 #about-me-title{
@@ -137,11 +123,6 @@ hr{
 }
 
 #about-container #paragraph{
-    /* text-indent: 2em; */
-    /* display: flex; */
-    /* align-items: flex-start;
-    justify-content: start;
-    text-align: left; */
     padding: 5px;
     font-size: 1.2rem;
 }
@@ -168,7 +149,6 @@ hr{
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
-    
     align-items: center;
     text-align : center;
     font-family: Arial, Helvetica, sans-serif;
@@ -316,7 +296,7 @@ blockquote {
     width: 10rem;
     height: 3rem;
     touch-action: manipulation;
-    background-color;: lightgray
+    background-color: lightgray
 }
 
 
