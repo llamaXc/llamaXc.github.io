@@ -1,0 +1,371 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Vicky Andritsch</title>
+        <meta name="description" content="Connect with Vicky Andritsch through social and business accounts.">
+        <meta name="author" content="Vicky Andritsch">
+
+        <meta property="og:title" content="Connect">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.vickyandritsch.com">
+        <meta property="og:description" content="Connect with Vicky Andritsch through social and business accounts.">
+        <meta property="og:image" content="assets/ogimage.png">
+
+        <link rel="icon" href="favicon.ico">
+        <link rel="icon" href="favicon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="stylesheets/main.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="dist/siema.min.js"></script>
+    </head>
+    <body>
+
+        <div id="navbar" class="sticky" >
+            <p id="menu-navbar-button" onclick="toggleMenu()"><i class="fa fa-bars"> Menu</i>
+            </p>
+            <div id="navbar-elements" onClick="handleClickInMenu()">
+                <a href="#main">Home</a>
+                <a href="#statement">Statement</a>
+                <a href="#stories">Successes</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <div class="main-container d-flex flex-column" id="main">
+
+            <div class="section-wrapper" id="main-section">
+                <div id="title-container">
+                    <h1 id="about-me-title">Vicky Andritsch</h1>
+                </div>
+
+                <div id="profile-container">
+                    <img id="profile-image" width="50%" src="assets/profile/IMG_9884.jpg"/>
+                </div>
+
+                <div class="button-container container-md">
+                    <button onclick="visitPlexus()" type="button"class="social-button btn btn-light">Plexus</button>
+                    <button onclick="visitFacebook()" type="button"class="social-button btn btn-light">Facebook</button>
+                    <button onclick="visitInstagram()" type="button"class="social-button btn btn-light">Instagram</button>
+                    <button onclick="visitTestimonials()" type="button"class="social-button btn btn-light">Success Stories</button>
+                    <button onclick="scrollToContact()" type="button"class="social-button btn btn-light">Contact Me</button>
+
+                </div>
+            </div>
+
+            <a class="anchor" id="statement"></a>
+            <div class="section-wrapper" id="about">
+                <div id="about-container">
+                    <p id="about-me-title">Personal Statement</p>
+                    <p id="paragraph">
+                        <span class="curly">I </span>bring hope to those seeking.<br/><br/>
+                        <span class="curly">I </span>provide solutions to those looking. <br/><br/>
+                        <span class="curly">I </span> cast a light and vision for all to see and imagine that for a future of their own. <br/><br/>
+                        <span class="curly">I </span> share with transparency and authenticity, demonstrating how faith, love, and trust can change lives.<br/><br/>
+                        <span class="curly">I </span> teach people to fight for their dreams, for their joy, and for their health, and most importantly believe it is possible. <br/><br/>
+                        <span class="curly">I </span> teach people to dig deep to find their worth, their value, and train them to do the same for others.
+                    </p>
+
+                    <blockquote class="blockquote">
+                        <p class="mb-0">Take rest in knowing you are fearfully and wonderfully made.</p>
+                        <br/><span class="author-tag">Psalms 139:14</span>
+                    </blockquote>
+                </div>
+            </div>
+
+
+            <a class="anchor" id="stories"></a>
+            <div class="section-wrapper" id="success">
+                <p id="about-me-title">Success Stories</p>
+
+                <div class="siema-container">
+                    <div class="review-button-wrapper">
+                        <div class="review-buttons">
+                            <button id="back-button" onclick="backSiema()"><b>Back</b></button>
+                            <button id="next-button" onclick="nextSiema()"><b>Next</b></button>
+                        </div>
+                    </div>
+                    <div class="siema">
+                    </div>
+                  </div>
+            </div>
+
+            <a class="anchor" id="contact"></a>
+            <div class="section-wrapper" id="contact-container">
+                <div class="contact-wrapper">
+                <p id="about-me-title">Contact</p>
+                <p>Feel free to reach out via my social media accounts or through my email<br/> <a href="">vandritsch@aol.com</a></p>
+                <p class="align-left">Mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </p>
+                </div>
+            </div>
+
+
+        <footer class="footer">
+            <p>Email: <a href='mailto:vandritsch@aol.com?subject=Contact%20from%20website'>vandritsch@aol.com</a></p>
+            <p>Copyright 2022 Vicky Andritsch</p>
+        </footer>
+    </div>
+
+        <script>
+
+            const body = $("body")
+            const profileImage = $("#profile-image")
+            const footer = $("footer")
+            const aboutSection = $("#about")
+            const contactSection = $("#contact-container")
+            const mainSection = $("#main-section")
+            const buttons = $(".social-button")
+            const successSection = $("#success")
+            const siemaContainer = $(".siema")
+            const reviewContainer = $(".review-container")
+            const MOBILE_WIDTH = 600
+
+            let navBarIsOpenMobile = false;
+
+            rotateImages();
+            buildReviews();
+            setupColorTheme();
+            initNavbar();
+
+            let numReviews = 0;
+
+            let siema;
+
+            function initNavbar(){
+                if($(window).width() <= MOBILE_WIDTH){
+                    closeNavBar();
+                }
+
+                $(window).on('resize',() => {
+                    console.log("resizing!")
+                    if($(window).width() <= MOBILE_WIDTH){
+                        console.log("Close")
+                        closeNavBar();
+                    }else{
+                        console.log("Open")
+                        openNavBar();
+                    }
+                })
+            }
+
+            function toggleMenu(){
+                const menuTitle = $("#menu-navbar-button")
+                const menuDiv = $("#navbar-elements")
+
+                navBarIsOpenMobile = !navBarIsOpenMobile;
+                if(navBarIsOpenMobile){
+                    menuDiv.css("display", "flex")
+                }else{
+                    menuDiv.css("display", "none")
+
+                }
+            }
+
+            function openNavBar(){
+                const menuDiv = $("#navbar-elements")
+                navBarIsOpenMobile = false;
+                menuDiv.css("display", "flex")
+            }
+
+            function closeNavBar(){
+                const menuDiv = $("#navbar-elements")
+                navBarIsOpenMobile = false;
+                menuDiv.css("display", "none")
+            }
+
+            function handleClickInMenu(){
+                if(navBarIsOpenMobile){
+                    closeNavBar();
+                }
+            }
+
+            async function buildReviews(){
+                console.log("Setting image attr")
+                const data = await $.getJSON("data/reviews.json");
+                const reviews = data.reviews;
+                let siemaHtml = ""
+                let index = 1
+                for(const review of reviews){
+                    let htmlReviewBlock = ""
+                    const {title, text, image} = review;
+                    let textPreview = text.substring(0, 300) + "...";
+                    let textReadmore = text.substring(300);
+
+                    const assetImage = 'assets/reviews/' + image
+                    htmlReviewBlock += '<div class="review-item">'
+                    htmlReviewBlock += '  <div class="card review-container">'
+                    htmlReviewBlock += '      <img class="card-img-top w-50" src="'+ assetImage + '">'
+                    htmlReviewBlock += '      <div class="card-body">'
+                    htmlReviewBlock += '        <h5 class="card-title">' + title + '</h5>'
+                    htmlReviewBlock += '        <p id="' + ("preview-" + index) + '"class="card-text review-text-preview">' + textPreview + '</p>'
+                    htmlReviewBlock += '        <p id="' + ("whole-" + index) + '"class="card-text review-text-whole">' + text + '</p>'
+                    htmlReviewBlock += '        <button id="' + ("read-more-" + index) + '" onclick="readMore(' + index + ')">Show more</button>'
+                    htmlReviewBlock += '        <p class="card-text"><small> Story ' + index + '</small></p>'
+                    htmlReviewBlock += '     </div>'
+                    htmlReviewBlock += '   </div>'
+                    htmlReviewBlock += '</div>'
+                    siemaHtml += (htmlReviewBlock)
+                    index++;
+                }
+
+                siemaContainer.html(siemaHtml)
+                numReviews = reviews.length;
+                const mySiema = new Siema({
+                    selector: '.siema',
+                    duration: 1,
+                    easing: 'ease-out',
+                    perPage: 1,
+                    startIndex: 0,
+                    draggable: false,
+                    multipleDrag: false,
+                    threshold: 0,
+                    loop: false,
+                    rtl: false,
+                    onInit: () => {
+                        $("#back-button").css('display', 'none')
+                    },
+                    onChange: () => {
+                        // Handle next/back buttons for review slide show
+                        let index = mySiema.currentSlide;
+                        if(index == 0){
+                            $("#back-button").css('display', 'none')
+                        }else{
+                            $("#back-button").css('display', 'block')
+                        }
+
+                        if(index == numReviews - 1){
+                            $("#next-button").css('display', 'none')
+                        }else{
+                            $("#next-button").css('display', 'block')
+                        }
+                    },
+                });
+                siema = mySiema;
+            }
+
+            function readMore(index){
+                console.log("read more: " + index);
+
+                const pTagMore = $("#whole-" + index)
+                const pTagPreview = $("#preview-" + index)
+                const isPTagMoreShown = pTagMore.css('display') == 'block'
+                const buttonReadmore = $("#read-more-" + index);
+                console.log(isPTagMoreShown)
+
+                if(isPTagMoreShown){
+                    pTagMore.css("display", "none")
+                    pTagPreview.css("display", "block")
+                    buttonReadmore.html("Show more")
+                }else{
+                    pTagMore.css("display", "block")
+                    pTagPreview.css("display", "none")
+                    buttonReadmore.html("Show less")
+                }
+
+            }
+
+            async function rotateImages(){
+                console.log("Setting image attr")
+                const data = await $.getJSON("data/images.json");
+                const images = data.images;
+                for(const image of images){
+                    console.log("assets/profile/" + image);
+                }
+                let imageIndex = 0;
+
+                setInterval(function () {
+                    const imagePath = images[imageIndex]
+                    if(imageIndex == images.length - 1){
+                        imageIndex = 0
+                    }else{
+                        imageIndex++;
+                    }
+                    profileImage.attr('src', 'assets/profile/' + imagePath);
+                }, 2500);
+            }
+
+            async function backSiema(){
+
+                await siema.prev(1);
+            }
+
+            async function nextSiema(){
+                await siema.next(1);
+            }
+
+            function setupColorTheme(){
+                const BG_COLOR = "#ffdde2"
+                const MAIN_COLOR = "#a2b79f"
+                const ABOUT_COLOR = "#d0efff";
+                const CONTACT_COLOR = "#b6ffd0"
+                const SAGE_DARK = "#ADBC97"
+                const PINK_LIGHT = "#eaa8ae"
+                const LIGHT_GRAY = "#8b8b8b"
+
+                const MAIN_TEXTURE = "dust.png";
+                setTextureOfElement(mainSection, MAIN_TEXTURE)
+                setTextureOfElement(aboutSection, MAIN_TEXTURE)
+                setTextureOfElement(footer, MAIN_TEXTURE)
+                setTextureOfElement(successSection, MAIN_TEXTURE)
+                setTextureOfElement(reviewContainer, MAIN_TEXTURE)
+                setTextureOfElement(contactSection, MAIN_TEXTURE)
+                setColorOfElement(body, BG_COLOR)
+                setColorOfElement(reviewContainer, LIGHT_GRAY)
+                setColorOfElement(mainSection, LIGHT_GRAY)
+                setColorOfElement(aboutSection, PINK_LIGHT)
+                setColorOfElement(successSection, LIGHT_GRAY)
+                setColorOfElement(contactSection, PINK_LIGHT)
+                setColorOfElement(footer, LIGHT_GRAY)
+                setTextureOfElement(buttons, MAIN_TEXTURE)
+            }
+
+            function setColorOfElement(el, color){
+                el.css("background-color", color)
+            }
+
+            function setTextureOfElement(el, texture){
+                el.css("background-image", "url(assets/backgrounds/" + texture + ")")
+            }
+
+            function visitFacebook(){
+                const URL = "https://www.facebook.com/profile.php?id=1347050147"
+                popOpenNewTab(URL)
+            }
+
+            function visitInstagram(){
+                const URL = "https://www.instagram.com/vickyandritsch"
+                popOpenNewTab(URL)
+            }
+
+            function visitPlexus(){
+                const URL = "https://plexusworldwide.com/vickyandritsch"
+                popOpenNewTab(URL)
+            }
+
+            function visitTestimonials(){
+                window.location.href = "#stories";
+            }
+
+            function emailVicky(){
+                var mailToLink = "mailto:vandritsch@aol.com?subject=" +encodeURIComponent("Contact from website")
+                window.location.href = mailToLink;
+            }
+
+            function scrollToContact(){
+                window.location.href="#contact"
+            }
+
+            function popOpenNewTab(url){
+                console.log("Open: " + URL)
+                window.open(url)
+            }
+
+        </script>
+    </body>
+</html>
