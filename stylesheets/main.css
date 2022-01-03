@@ -446,6 +446,10 @@ blockquote {
 
     }
 
+    .show-more-button:hover{
+        background-color: lightgray !important;
+    }
+
     #line-breaker{
         display: none;
     }
