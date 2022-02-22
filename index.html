@@ -33,7 +33,7 @@
             <div id="navbar-elements" onClick="handleClickInMenu()">
                 <a href="#main">Home</a>
                 <a href="#statement">Statement</a>
-                <a href="#current">Winter Group</a>
+                <a href="#current">Spring Group</a>
                 <a href="#stories">Successes</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -80,7 +80,7 @@
 
             <a class="anchor" id="current"></a>
             <div class="section-wrapper" id="current-update">
-                <p id="about-me-title">Winter Accountability Group</p>
+                <p id="about-me-title">Spring Accountability Group</p>
                 <div class="current-wrapper">
                     <img id="current-image" src="assets/ogimage.png"/>
                     <p class="current-text-tag" id="preview-current">Preview...</p>
@@ -236,6 +236,7 @@
                 const reviews = data.reviews;
                 let siemaHtml = ""
                 let index = 1
+                let length = reviews.length
                 for(const review of reviews){
                     let htmlReviewBlock = ""
                     const {title, text, image} = review;
@@ -253,7 +254,7 @@
                     htmlReviewBlock += '        <p id="' + ("preview-" + index) + '"class="card-text review-text-preview">' + textPreview + '</p>'
                     htmlReviewBlock += '        <p id="' + ("whole-" + index) + '"class="card-text review-text-whole">' + text + '</p>'
                     htmlReviewBlock += '        <button class="show-more-button" id="' + ("read-more-" + index) + '" onclick="readMore(' + index + ')">Show more</button>'
-                    htmlReviewBlock += '        <p class="card-text"><small> Story ' + index + '</small></p>'
+                    htmlReviewBlock += '        <p class="card-text"><small> Story ' + index + ' of ' + length + '</small></p>'
                     htmlReviewBlock += '     </div>'
                     htmlReviewBlock += '   </div>'
                     htmlReviewBlock += '</div>'
